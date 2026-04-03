@@ -40,3 +40,6 @@ repo/.env
 # OS
 Thumbs.db
 .DS_Store
+/session-1.json
+.claude/
+**/.claude/
