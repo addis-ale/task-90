@@ -30,7 +30,6 @@ replay_pid*
 
 # Workspace specific
 .claude/
-sessions/
 sessions-2/
 
 # Environment secrets
