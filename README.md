@@ -31,38 +31,7 @@ inside the Docker build.
 |----------|-------------|-------|
 | `admin`  | `Admin@1234!` | ADMIN |
 
-### Running without Docker (local PostgreSQL)
 
-If you prefer not to use Docker, you can run the application directly with Maven
-and a local PostgreSQL instance:
-
-```bash
-# 1. Create database and user in PostgreSQL
-psql -U postgres -c "CREATE DATABASE ricms;"
-psql -U postgres -c "CREATE USER ricms WITH PASSWORD 'ricms_secret';"
-psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE ricms TO ricms;"
-
-# 2. Set environment variables
-export DB_HOST=localhost
-export DB_PORT=5432
-export DB_NAME=ricms
-export DB_USER=ricms
-export DB_PASSWORD=ricms_secret
-export JWT_SECRET="a-very-long-secret-key-for-ricms-that-is-at-least-256-bits-long-and-secure"
-export APP_ENCRYPTION_SECRET_KEY="$(openssl rand -base64 32)"
-
-# 3. Build and run
-mvn clean package -DskipTests
-java -jar target/ricms-1.0.0.jar
-
-# Or use Spring Boot Maven plugin directly
-mvn spring-boot:run
-```
-
-Flyway will automatically create all tables on first startup. The application
-will be available at http://localhost:8080.
-
----
 
 ## Running Tests
 

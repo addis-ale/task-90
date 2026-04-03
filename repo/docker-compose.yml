@@ -27,16 +27,14 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    env_file:
-      - .env
     environment:
       DB_HOST: db
       DB_PORT: 5432
       DB_NAME: ricms
       DB_USER: ricms
       DB_PASSWORD: ${POSTGRES_PASSWORD:-ricms_secret}
-      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be set in .env}
-      APP_ENCRYPTION_SECRET_KEY: ${APP_ENCRYPTION_SECRET_KEY:?APP_ENCRYPTION_SECRET_KEY must be set in .env}
+      JWT_SECRET: ${JWT_SECRET:-a-very-long-secret-key-for-ricms-that-is-at-least-256-bits-long-and-secure}
+      APP_ENCRYPTION_SECRET_KEY: ${APP_ENCRYPTION_SECRET_KEY:-WnVea3WTlDC0CXcZaL/SDRVSisv4xPnyM1Ja8VFoGWo=}
       SPRING_JPA_SHOW_SQL: "false"
     ports:
       - "8080:8080"

@@ -1,5 +1,4 @@
 # IDEs
-.vscode/
 .idea/
 *.iml
 *.iws
@@ -42,3 +41,6 @@ Thumbs.db
 /session-1.json
 .claude/
 **/.claude/
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
