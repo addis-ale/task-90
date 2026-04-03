@@ -1,0 +1,42 @@
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.iws
+.project
+.classpath
+.settings/
+
+# Build artifacts
+repo/target/
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Logs
+repo/*.log
+*.log
+hs_err_pid*
+replay_pid*
+
+# Maven
+.mvn/
+!mvnw
+!mvnw.cmd
+
+# Workspace specific
+.claude/
+sessions/
+sessions-2/
+
+# Environment secrets
+.env
+repo/.env
+
+# OS
+Thumbs.db
+.DS_Store
